@@ -1,0 +1,7 @@
+---
+- name: setting up my gooz.us boxes
+  hosts: baseimage
+  user: root
+    
+  roles:
+    - { role: goozbach.EPEL, epel_testing_enabled: 1 }

@@ -1,0 +1,3 @@
+[baseimage]
+a.gooz.us ansible_ssh_host=162.144.86.137
+b.gooz.us ansible_ssh_host=162.144.104.125
