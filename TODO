@@ -1,1 +1,4 @@
 * Finish syncrepos
+* Put urls for vagrant boxes
+* Build vagrant boxes with packer
+* Publish packer configs
