@@ -1,0 +1,9 @@
+---
+- name: Testing goozbach.EPEL role
+  hosts: gt5
+  user: vagrant
+  sudo: yes
+    
+  roles:
+    - { role: goozbach.EPEL, epel_testing_enabled: 1 }
+

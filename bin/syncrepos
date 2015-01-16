@@ -1,0 +1,13 @@
+#!/usr/bin/python
+
+# TODO find github library
+#
+# List all of the goozbach-anible repos
+#
+# for each of goozbach-ansible repos
+# do
+#   if not there, and not git repo,
+#     clone
+#   else
+#     git pull
+# done

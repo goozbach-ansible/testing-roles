@@ -6,12 +6,18 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
+  config.vm.provision :shell, :inline => "sudo /usr/bin/yum -y install python-simplejson && echo 'success!' || echo 'failed python-json provisioning'"
   config.vm.provision "ansible" do |ansible|
     ansible.playbook = "ansible/site.yml"
     ansible.groups = {
-      "epel" => ["cent5", "cent6", "cent7"],
+      "allEL" => ["cent5", "cent6", "cent7"],
+      "el5" => ["cent5"],
+      "el6" => ["cent6"],
+      "el7" => ["cent7"],
+      "gt5" => ["cent5", "cent6", "cent7"],
+      "gt6" => ["cent6", "cent7"],
+      "gt7" => ["cent7"],
     }
-    # TODO ansible.cfg for roles path
   end
 
   config.vm.define "cent5" do |cent5|
