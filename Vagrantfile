@@ -6,6 +6,14 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
+  config.vm.provision "ansible" do |ansible|
+    ansible.playbook = "ansible/site.yml"
+    ansible.groups = {
+      "epel" => ["cent5", "cent6", "cent7"],
+    }
+    # TODO ansible.cfg for roles path
+  end
+
   config.vm.define "cent5" do |cent5|
     cent5.vm.box = "centos5-x86_64"
     cent5.ssh.forward_agent = true
