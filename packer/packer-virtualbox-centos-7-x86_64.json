@@ -3,7 +3,7 @@
         {
             "boot_command": [
                 "<esc>",
-                "<wait>linux ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter>"
+                "<wait>linux ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/7.cfg<enter>"
             ],
             "boot_wait": "5s",
             "disk_size": 40000,

@@ -3,12 +3,12 @@
         {
             "boot_command": [
                 "<esc>",
-                "<wait>linux ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter>"
+                "<wait>linux ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/5.cfg<enter>"
             ],
             "boot_wait": "5s",
             "disk_size": 40000,
             "guest_os_type": "RedHat_64",
-            "headless": true,
+            "headless": false,
             "http_directory": "./http_directory",
             "iso_checksum": "9729c04a8a3ba57ed4e34ee5b96522879e6a3bcbf5582c3b6bcfd02bcfbacf8c",
             "iso_checksum_type": "sha256",
@@ -21,7 +21,7 @@
                 ["modifyvm", "{{.Name}}", "--memory", "1024"],
                 ["modifyvm", "{{.Name}}", "--cpus", "2"]
             ],
-            "vm_name": "packer-centos-6_0-64",
+            "vm_name": "packer-centos-5_0-64",
             "shutdown_command": "echo 'packer' | sudo -S shutdown -P now"
         }
     ],
@@ -37,7 +37,7 @@
     ],
     "post-processors": [
         {
-            "type": "vagrant",
+            "type": "vagrant"
         }
     ]
 }

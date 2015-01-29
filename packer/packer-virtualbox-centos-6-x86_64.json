@@ -3,12 +3,12 @@
         {
             "boot_command": [
                 "<esc>",
-                "<wait>linux ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter>"
+                "<wait>linux ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/6.cfg<enter>"
             ],
             "boot_wait": "5s",
             "disk_size": 40000,
             "guest_os_type": "RedHat_64",
-            "headless": true,
+            "headless": false,
             "http_directory": "./http_directory",
             "iso_checksum": "ad8f6de098503174c7609d172679fa0dd276f4b669708933d9c4927bd3fe1017",
             "iso_checksum_type": "sha256",
@@ -37,7 +37,7 @@
     ],
     "post-processors": [
         {
-            "type": "vagrant",
+            "type": "vagrant"
         }
     ]
 }
